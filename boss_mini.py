@@ -26,7 +26,10 @@ def heal():
 # --- Simple Game Loop ---
 while p_hp > 0 and b_hp > 0:
   print(f"\nPlayer: {p_hp} | Boss: {b_hp}")
-  choice = input("Action [a]ttack, [h]eal: ").lower()   # Removed cheat code logic
+
+  choice = ''   # Resets 'choice' variable before selection loop
+  while choice != 'a' and choice != 'h':    # Added logic to ensure only appropriate options are selected
+    choice = input("Action [a]ttack, [h]eal: ").lower()   # Removed cheat code logic
 
   if choice == 'a':
     attack()
